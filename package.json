@@ -24,7 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build-server-side": "for dir in $(ls ./amplify/backend/function); do cd amplify/backend/function/$dir/src; pwd; tsc; cd -; done"
+    "build-server-side": "for dir in $(ls ./amplify/backend/function); do cd amplify/backend/function/$dir/src; pwd; npm install; tsc; cd -; done"
   },
   "eslintConfig": {
     "extends": "react-app"
