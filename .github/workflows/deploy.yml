@@ -16,6 +16,9 @@ jobs:
         run: |
           npm install
           npm run build
+          ./scripts/set_up_amplify.sh
+          npx amplify env checkout prod
+          npx amplify push --yes
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
