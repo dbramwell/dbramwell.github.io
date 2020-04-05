@@ -1,0 +1,12 @@
+{
+    "permissions": {
+        "storage": {
+            "stackoverflow": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    }
+}

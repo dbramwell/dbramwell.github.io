@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/githubData",
+            "lambdaFunction": "githubapi",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "githubapi",
+    "apiName": "githubapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "githubapi"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "dbramwellgithubio-prod-20200124134559-authRole",
+        "unAuthRoleName": "dbramwellgithubio-prod-20200124134559-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "githubapi",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "b7d274c3"
+}

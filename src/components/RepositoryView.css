@@ -1,0 +1,34 @@
+.repository {
+  width: 100%;
+}
+
+.repoHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.repoHeader span {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.repoHeader span h3 {
+  margin: 0;
+}
+
+@media (orientation: portrait) {
+  .repoHeader {
+    flex-direction: column;
+  }
+}
+
+.language {
+  margin-right: 10px;
+  text-align: right;
+}
+
+.repoHeader button {
+  margin-right: 30px;
+  padding: 0px;
+}

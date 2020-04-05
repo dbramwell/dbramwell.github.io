@@ -1,0 +1,49 @@
+.answer {
+  width: 100%;
+}
+
+.answerHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.answerHeader span {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.answerHeader span h3 {
+  margin: 0;
+}
+
+@media (orientation: portrait) {
+  .answerHeader {
+    flex-direction: column;
+  }
+}
+
+.answer .section {
+  display: flex;
+  flex-direction: row;
+}
+
+.answer .section h2 {
+  margin-right: 40px;
+  min-width: 20%
+}
+
+.answerContent {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.answerContent h3{
+  margin-right: 40px;
+}
+
+.answerHeader button {
+  margin-right: 30px;
+  padding: 0px;
+}

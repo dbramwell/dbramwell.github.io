@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "allowJs": true,
+    "types": ["node"]
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}

@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useGlobal} from 'reactn';
+import Amplify from 'aws-amplify';
+import awsconfig from './aws-exports';
 import './App.css';
+import Header from './components/Header'
+import Github from './sections/Github'
+import StackOverflow from './sections/StackOverflow'
+
+Amplify.configure(awsconfig);
 
 const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  const [githubData] = useGlobal('githubData');
+  const [stackOverflowData] = useGlobal('stackOverflowData');
+
+
+  if (githubData && stackOverflowData) {
+    return (
+      <div className="App">
+        <Header />
+        <div className="content">
+          <Github />
+        </div>
+      </div>
+    );
+  }
+
+  return null
 }
 
 export default App;
