@@ -3,10 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { PullRequest } from './types';
 import { API } from 'aws-amplify';
-
-const baseApi = "https://api.github.com/users/"
 
 setGlobal({
   talkyData: [],

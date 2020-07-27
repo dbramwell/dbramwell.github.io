@@ -5,7 +5,6 @@ import 'nes.css/css/nes.min.css';
 import './App.css';
 import Header from './components/Header'
 import Github from './sections/Github'
-import StackOverflow from './sections/StackOverflow'
 
 Amplify.configure(awsconfig);
 

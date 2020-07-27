@@ -12,7 +12,7 @@ const Header: React.FC = () => {
   return (
     <header>
       <div>
-        <img src={githubData.avatarUrl} />
+        <img alt="Profile Pic" src={githubData.avatarUrl} />
       </div>
       <div className="headerText">
         <h1>{githubData.name}</h1>
