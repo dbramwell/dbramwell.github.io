@@ -25,7 +25,7 @@ const Github: React.FC = () => {
     return (
       <Fragment>
         <section>
-          <h2>Github</h2>
+          <h1>Github</h1>
         </section>
         <section>
           <Container title="Popular Repositories">

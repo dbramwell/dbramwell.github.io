@@ -9,8 +9,8 @@ interface Props {
 const Container = (props: Props) => {
 
   return (
-    <div className={`nes-container is-rounded${props.title ? ' with-title' : ''}`}>
-      {props.title ? <p className="title">{props.title}</p> : null}
+    <div className={`nes-container${props.title ? ' with-title' : ''}`}>
+      {props.title ? <h2 className="title">{props.title}</h2> : null}
       {props.children}
     </div>
   );

@@ -17,18 +17,10 @@
   margin: 0;
 }
 
-@media (orientation: portrait) {
-  .repoHeader {
-    flex-direction: column;
-  }
-}
-
 .language {
-  margin-right: 10px;
   text-align: right;
 }
 
 .repoHeader button {
-  margin-right: 30px;
   padding: 0px;
 }

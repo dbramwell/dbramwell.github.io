@@ -1,0 +1,71 @@
+.nes-btn {
+  border-width: 3px;
+  border-right-color: lightgray;
+  border-bottom-color: lightgray;
+  border-top-color: white;
+  border-left-color: white;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  padding: 4px;
+  margin: 0;
+  width: 100%;
+  border-image-source: none!important;
+  position: relative;
+}
+
+.nes-btn::after {
+  box-shadow: none;
+}
+
+.btn-container div {
+  border-width: 3px;
+}
+
+.nes-btn:hover {
+  box-shadow: none;
+}
+
+.nes-btn:hover::after {
+  box-shadow: none;
+}
+
+.nes-btn:active:not(.is-disabled)::after {
+  box-shadow: none;
+  border-width: 3px;
+  border-left-color: lightgray;
+  border-top-color: lightgray;
+  border-bottom-color: white;
+  border-right-color: white;
+}
+
+.nes-btn:active {
+  border-width: 3px;
+  border-left-color: lightgray;
+  border-top-color: lightgray;
+  border-bottom-color: white;
+  border-right-color: white;
+}
+
+.btn-container .top-bottom-border {
+  border-top-style: solid;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+@media screen and (max-width: 650px) {
+  .nes-btn {
+    border-width: 2px;
+  }
+
+  .btn-container div {
+    border-width: 2px;
+  }
+
+  .nes-btn:active:not(.is-disabled)::after {
+    border-width: 2px;
+  }
+  
+  .nes-btn:active {
+    border-width: 2px;
+  }
+}

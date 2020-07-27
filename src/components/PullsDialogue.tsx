@@ -47,7 +47,7 @@ const PullsDialogue = (props: Props) => {
       ?
         <div className="backdrop" onClick={() => setShown(false)}>
           <div className="nes-container" id={id} onClick={(evt) => {evt.stopPropagation()}}>
-            <h3>{props.pulls[0].baseRepository.nameWithOwner}</h3>
+            <h2>{props.pulls[0].baseRepository.nameWithOwner}</h2>
             <HRSpacer>
               {props.pulls.map(it => {
                 const date = it.mergedAt ? it.mergedAt : it.closedAt

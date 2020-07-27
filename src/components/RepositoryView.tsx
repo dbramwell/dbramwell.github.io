@@ -22,16 +22,18 @@ const RepositoryView = (props: Props) => {
       <div className="repoHeader" >
         <div>
           <a href={props.repo.url} >
-            <h2>{owner}/&#8203;{repoName}</h2>
+            <h3>{owner}/&#8203;{repoName}</h3>
           </a>
-          {dialog}
+          <div style={{maxWidth: '100px'}}>
+            {dialog}
+          </div>
         </div>
         <div>
           <span>
             <i className="nes-icon star"></i>
-            <h2>x{props.repo.stargazers.totalCount}</h2>
+            <h3>x{props.repo.stargazers.totalCount}</h3>
           </span>
-          <h2 className="language" style={{color: props.repo.primaryLanguage.color}}>{props.repo.primaryLanguage.name}</h2>
+          <h3 className="language" style={{color: props.repo.primaryLanguage.color}}>{props.repo.primaryLanguage.name}</h3>
         </div>
       </div>
       <p>{props.repo.description}</p>

@@ -13,12 +13,11 @@ const Header: React.FC = () => {
     <header>
       <div>
         <img src={githubData.avatarUrl} />
-        <h1>{githubData.name}</h1>
       </div>
-      <div className="column">
+      <div className="headerText">
+        <h1>{githubData.name}</h1>
         <a href={stackoverflowProfile}>
-          <p>Stack Overflow</p>
-          <p>Reputation: {stackOverflowData.reputation}</p>
+          <h3>Stack Overflow Reputation: {stackOverflowData.reputation}</h3>
         </a>
       </div>
     </header>

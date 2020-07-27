@@ -1,6 +1,6 @@
 header {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   height: 100px;
   display: flex;
   padding: 10px;
@@ -14,16 +14,27 @@ header {
 
 header div {
   height: 100%;
+}
+
+header .headerText {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: right;
+  justify-content: flex-end;
 }
 
 header div.column {
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
+  flex: 1;
+}
+
+header div.column:nth-of-type(2) {
+  text-align: right;
+  align-items: flex-end;
 }
 
 header p {
@@ -34,7 +45,7 @@ header div img {
   height: 100%;
 }
 
-header h1 {
+header h1, header h3 {
   margin: 0;
   margin-left: 10px;
 }
