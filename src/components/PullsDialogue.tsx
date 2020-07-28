@@ -50,7 +50,6 @@ const PullsDialogue = (props: Props) => {
             <h2>{props.pulls[0].baseRepository.nameWithOwner}</h2>
             <HRSpacer>
               {props.pulls.map(it => {
-                const date = it.mergedAt ? it.mergedAt : it.closedAt
                 let mergedOrClosed
                 if (it.mergedAt) mergedOrClosed = `Merged: ${formatDate(it.mergedAt)}`
                 else if (it.closedAt) mergedOrClosed = `Closed: ${formatDate(it.closedAt)}`
