@@ -31,7 +31,7 @@ jobs:
       - name: deploy backend
         uses: ambientlight/amplify-cli-action@0.2.1
         with:
-          amplify_command: publish
+          amplify_command: push
           amplify_env: prod
           build_command: 'npm run build'
         env:
