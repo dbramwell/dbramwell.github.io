@@ -63,7 +63,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "dbramwellgithubio-prod-20200124134559-deployment",
-					"S3Key": "amplify-builds/githubapi-473434664d684f725655-build.zip"
+					"S3Key": "amplify-builds/githubapi-394b4e706e4576396539-build.zip"
 				}
 			}
 		},
