@@ -11,10 +11,16 @@ export interface GithubResponse {
   avatarUrl: string
   bio: string
   name: string
+  login: string
   repositories: {
     nodes: Repository[]
   }
   pullRequests: {
+    pageInfo: {
+      endCursor: string
+      hasNextPage: boolean
+    },
+    totalCount: number
     nodes: PullRequest[]
   }
   repositoriesContributedTo: {
@@ -22,8 +28,28 @@ export interface GithubResponse {
   }
 }
 
+export interface MentionableUsersResponse {
+  repository: {
+    mentionableUsers: {
+      pageInfo: {
+        endCursor: string
+        hasNextPage: boolean
+      },
+      nodes: MentionableUser[]
+    }
+  }
+}
+
+export interface MentionableUser {
+  name: string
+}
+
 export interface Repository {
   nameWithOwner: string
+  name: string
+  owner: {
+    login: string
+  }
   description: string
   isPrivate: boolean
   url: string

@@ -18,6 +18,11 @@ app.use(function(req, res, next) {
 
 app.get('/githubData', async (req, res) => {
   const data = await githubApi.getData()
+  while (data.pullRequests.pageInfo.hasNextPage) {
+    const moreData = await githubApi.getData(data.pullRequests.pageInfo.endCursor)
+    data.pullRequests.pageInfo = moreData.pullRequests.pageInfo
+    data.pullRequests.nodes.push(...moreData.pullRequests.nodes)
+  }
   res.json(data)
 });
 

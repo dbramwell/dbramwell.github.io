@@ -5,7 +5,7 @@ class ParameterStore {
   ssm: any
 
   constructor() {
-    this.ssm = new AWS.SSM({apiVersion: '2014-11-06'})
+    this.ssm = new AWS.SSM({apiVersion: '2014-11-06', region: 'us-east-1'})
   }
 
   async getParameter(parameter: string): Promise<string> {

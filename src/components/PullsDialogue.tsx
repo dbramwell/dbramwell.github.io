@@ -51,10 +51,14 @@ const PullsDialogue = (props: Props) => {
             <HRSpacer>
               {props.pulls.map(it => {
                 const date = it.mergedAt ? it.mergedAt : it.closedAt
+                let mergedOrClosed
+                if (it.mergedAt) mergedOrClosed = `Merged: ${formatDate(it.mergedAt)}`
+                else if (it.closedAt) mergedOrClosed = `Closed: ${formatDate(it.closedAt)}`
+                else mergedOrClosed = "Still Open"
                 return (
                   <Fragment>
                     <p><a href={it.url}>#{it.number}</a> {it.title}</p>
-                    <p>Merged: {date ? formatDate(date) : "Still open"}</p>
+                    <p>{mergedOrClosed}</p>
                   </Fragment>
                 )
               })}
