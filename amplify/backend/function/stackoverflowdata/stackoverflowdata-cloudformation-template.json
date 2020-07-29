@@ -11,7 +11,7 @@
 		},
 		"storagestackoverflowArn": {
 			"Type": "String",
-			"Default": "storagestackoverflowArn"
+			"Default": "*"
 		}
 	},
 	"Conditions": {
