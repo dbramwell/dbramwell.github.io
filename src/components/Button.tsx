@@ -1,24 +1,20 @@
 import React from 'react';
 import './Button.css'
+import Border from './Border';
 
 interface Props {
   onClick?: () => void
   children: string
   className?: string
+  disable?: boolean
 }
 
 const Button = (props: Props) => {
 
   return (
-    <div className='btn-container' style={{display: 'inline-block'}}>
-      <div className='top-bottom-border'></div>
-      <div style={{display: 'flex'}}>
-        <div style={{borderLeftStyle: 'solid'}}></div>
-          <button type="button" className={`nes-btn ${props.className}`} onClick={props.onClick}>{props.children}</button>
-        <div style={{borderLeftStyle: 'solid'}}></div>
-      </div>
-      <div className='top-bottom-border'></div>
-    </div>
+    <Border>
+      <button type="button" disabled={props.disable} className={`nes-btn ${props.className}`} onClick={props.onClick}>{props.children}</button>
+    </Border>
   );
 }
 

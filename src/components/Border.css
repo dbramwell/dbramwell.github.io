@@ -1,0 +1,15 @@
+.nes-border {
+  display: inline-block;
+}
+
+.nes-border .top-bottom-border {
+  border-top-style: solid;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+@media screen and (max-width: 650px) {
+  .nes-border > div, .nes-border > div > div {
+    border-width: 2px;
+  }
+}

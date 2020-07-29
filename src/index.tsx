@@ -5,22 +5,6 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { API } from 'aws-amplify';
 
-setGlobal({
-  talkyData: [],
-  talkyIndex: 0
-});
-
-// addReducer("incrementTalkyIndex", (state) => {
-//   if (state.talkyIndex + 1 >= state.talkyData.length) {
-//     return {talkyIndex: 0}
-//   }
-//   return {talkyIndex: state.talkyIndex + 1}
-// });
-
-// addReducer("clearTalkyData", () => {
-//   return {talkyData: []}
-// });
-
 addReducer("getGithubData", async () => {
   const resp = await API.get("githubapi", "/githubData", {})
   return {githubData: resp}
@@ -44,8 +28,6 @@ addReducer("getGithubColours", async () => {
 getDispatch().getGithubData()
 getDispatch().getStackOverflowData()
 getDispatch().getGithubColours()
-
-// setInterval(getDispatch().incrementTalkyIndex, 2000)
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

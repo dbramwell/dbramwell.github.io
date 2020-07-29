@@ -12,16 +12,29 @@ header {
   justify-content: space-between;
 }
 
-header div {
+header > div {
   height: 100%;
 }
 
 header .headerText {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   text-align: right;
   justify-content: flex-end;
+}
+
+header .headerText > div{
+  display: flex;
+  align-items: center;
+}
+
+header .headerText > div > div{
+  display: flex;
+  align-items: center;
+}
+
+header .headerText div a{
+  margin-left: 1vw;
 }
 
 header div.column {

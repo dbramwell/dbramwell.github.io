@@ -13,12 +13,12 @@
   position: relative;
 }
 
-.nes-btn::after {
-  box-shadow: none;
+.nes-btn:disabled {
+  background-color: darkgrey;
 }
 
-.btn-container div {
-  border-width: 3px;
+.nes-btn::after {
+  box-shadow: none;
 }
 
 .nes-btn:hover {
@@ -46,18 +46,8 @@
   border-right-color: white;
 }
 
-.btn-container .top-bottom-border {
-  border-top-style: solid;
-  margin-left: 2px;
-  margin-right: 2px;
-}
-
 @media screen and (max-width: 650px) {
   .nes-btn {
-    border-width: 2px;
-  }
-
-  .btn-container div {
     border-width: 2px;
   }
 

@@ -1,5 +1,6 @@
 import React, {useGlobal} from 'reactn'
 import './Header.css'
+import EmailPopup from './EmailPopup'
 
 const Header: React.FC = () => {
 
@@ -15,7 +16,16 @@ const Header: React.FC = () => {
         <img alt="Profile Pic" src={githubData.avatarUrl} />
       </div>
       <div className="headerText">
-        <h1>{githubData.name}</h1>
+        <div>
+          <h1>{githubData.name}</h1>
+          <a href="https://www.linkedin.com/in/david-bramwell-423b2136">
+            <i className="nes-icon linkedin" />
+          </a>
+          <a href="https://github.com/dbramwell">
+            <i className="nes-icon github" />
+          </a>
+          <EmailPopup />
+        </div>
         <a href={stackoverflowProfile}>
           <h3>Stack Overflow Reputation: {stackOverflowData.reputation}</h3>
         </a>

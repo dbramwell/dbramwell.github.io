@@ -1,7 +1,7 @@
 import React from 'reactn';
 import './RepositoryView.css'
 import { Repository, PullRequest } from '../types'
-import PullsDialogue from './PullsDialogue'
+import PullsPopup from './PullsPopup'
 
 interface Props {
   repo: Repository
@@ -14,7 +14,7 @@ const RepositoryView = (props: Props) => {
 
   let dialog = null
   if (props.pulls) {
-    dialog = <PullsDialogue pulls={props.pulls}/>
+    dialog = <PullsPopup pulls={props.pulls}/>
   }
 
   return (

@@ -42,7 +42,7 @@ h3 {
     font-size: 2vw!important;
   }
 
-  p {
+  p, input, textarea {
     font-size: 0.5rem;
   }
 

@@ -1,4 +1,5 @@
 import githubApi from "./githubApi"
+import ses from "./SES"
 
 var express = require('express')
 var bodyParser = require('body-parser')
@@ -25,6 +26,11 @@ app.get('/githubData', async (req, res) => {
   }
   res.json(data)
 });
+
+app.post('/email', async(req, res) => {
+  const success = await ses.sendEmail(req.body.subject, req.body.body, req.body.sender)
+  res.json({success})
+})
 
 app.listen(3000, function() {
     console.log("App started")
