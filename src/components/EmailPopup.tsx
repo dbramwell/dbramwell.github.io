@@ -1,4 +1,4 @@
-import React, { getDispatch, useState, useEffect } from 'reactn';
+import React, {useState} from 'reactn';
 import './EmailPopup.css';
 import Popup from './Popup';
 import { FC } from 'react';
@@ -47,6 +47,7 @@ const EmailPopup: FC = () => {
   }
 
   const validEmail = () => {
+    // eslint-disable-next-line
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(sender.toLowerCase());
   }
@@ -72,6 +73,7 @@ const EmailPopup: FC = () => {
 
   return (
     <Popup onClose={reset} clicker={
+      // eslint-disable-next-line
       <a href="javascript:void(0);">
         <i className="nes-icon gmail" />
       </a>

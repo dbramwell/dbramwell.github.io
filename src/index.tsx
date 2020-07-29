@@ -1,4 +1,4 @@
-import React, { setGlobal, addReducer, getDispatch } from 'reactn';
+import React, { addReducer, getDispatch } from 'reactn';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
