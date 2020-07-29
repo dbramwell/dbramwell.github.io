@@ -1,7 +1,4 @@
 import React, {useGlobal} from 'reactn';
-import Container from '../components/Container'
-import RepositoryView from '../components/RepositoryView'
-import HRSpacer from '../components/HRSpacer'
 import { Fragment } from 'react';
 
 const Bio: React.FC = () => {
