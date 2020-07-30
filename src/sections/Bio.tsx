@@ -13,6 +13,9 @@ const Bio: React.FC = () => {
         </section>
         <section>
           <p>{githubData.bio}</p>
+          <div style={{textAlign: 'center'}}>
+            <a href="david_bramwell_cv.docx">Download CV</a>
+          </div>
         </section>
       </Fragment>
     );

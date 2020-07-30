@@ -10,6 +10,11 @@
             "StackName": "dbramwellgithubio-prod-20200124134559",
             "StackId": "arn:aws:cloudformation:us-east-1:806057576441:stack/dbramwellgithubio-prod-20200124134559/db133750-3eaf-11ea-bdff-0e8a861a6983",
             "AmplifyAppId": "d30cf12ip1njzq"
+        },
+        "categories": {
+            "function": {
+                "githubapi": {}
+            }
         }
     }
 }
