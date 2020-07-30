@@ -151,6 +151,14 @@
 								"ssm:GetParameter"
 							],
 							"Resource": "arn:aws:ssm:us-east-1:806057576441:parameter/github-api"
+						},
+						{
+							"Effect": "Allow",
+							"Action":[
+								"SES:SendEmail",
+								"SES:SendRawEmail"
+							],
+							"Resource": "arn:aws:ses:us-east-1:806057576441:*"
 						}
 					]
 				}
