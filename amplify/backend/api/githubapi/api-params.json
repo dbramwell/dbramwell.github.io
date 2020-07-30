@@ -6,6 +6,13 @@
             "privacy": {
                 "open": true
             }
+        },
+        {
+            "name": "/email",
+            "lambdaFunction": "githubapi",
+            "privacy": {
+                "open": true
+            }
         }
     ],
     "resourceName": "githubapi",
@@ -31,5 +38,5 @@
             ]
         }
     ],
-    "uuid": "b7d274c3"
+    "uuid": "765f2a82"
 }

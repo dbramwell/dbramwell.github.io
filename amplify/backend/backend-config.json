@@ -1,65 +1,65 @@
 {
-	"function": {
-		"githubapi": {
-			"service": "Lambda",
-			"providerPlugin": "awscloudformation",
-			"build": true
-		},
-		"stackoverflowdata": {
-			"service": "Lambda",
-			"providerPlugin": "awscloudformation",
-			"build": true
-		},
-		"stackoverflowapi": {
-			"service": "Lambda",
-			"providerPlugin": "awscloudformation",
-			"build": true,
-			"dependsOn": [
-				{
-					"category": "storage",
-					"resourceName": "stackoverflow",
-					"attributes": [
-						"Name",
-						"Arn"
-					]
-				}
-			]
-		}
-	},
-	"api": {
-		"githubapi": {
-			"service": "API Gateway",
-			"providerPlugin": "awscloudformation",
-			"dependsOn": [
-				{
-					"category": "function",
-					"resourceName": "githubapi",
-					"attributes": [
-						"Name",
-						"Arn"
-					]
-				}
-			]
-		},
-		"stackoverflowapi": {
-			"service": "API Gateway",
-			"providerPlugin": "awscloudformation",
-			"dependsOn": [
-				{
-					"category": "function",
-					"resourceName": "stackoverflowapi",
-					"attributes": [
-						"Name",
-						"Arn"
-					]
-				}
-			]
-		}
-	},
-	"storage": {
-		"stackoverflow": {
-			"service": "DynamoDB",
-			"providerPlugin": "awscloudformation"
-		}
-	}
+    "function": {
+        "githubapi": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true
+        },
+        "stackoverflowdata": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true
+        },
+        "stackoverflowapi": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true,
+            "dependsOn": [
+                {
+                    "category": "storage",
+                    "resourceName": "stackoverflow",
+                    "attributes": [
+                        "Name",
+                        "Arn"
+                    ]
+                }
+            ]
+        }
+    },
+    "api": {
+        "githubapi": {
+            "service": "API Gateway",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": [
+                {
+                    "category": "function",
+                    "resourceName": "githubapi",
+                    "attributes": [
+                        "Name",
+                        "Arn"
+                    ]
+                }
+            ]
+        },
+        "stackoverflowapi": {
+            "service": "API Gateway",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": [
+                {
+                    "category": "function",
+                    "resourceName": "stackoverflowapi",
+                    "attributes": [
+                        "Name",
+                        "Arn"
+                    ]
+                }
+            ]
+        }
+    },
+    "storage": {
+        "stackoverflow": {
+            "service": "DynamoDB",
+            "providerPlugin": "awscloudformation"
+        }
+    }
 }
