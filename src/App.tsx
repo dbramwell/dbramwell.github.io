@@ -27,7 +27,10 @@ const App: React.FC = () => {
     );
   }
 
-  return null
+  return <div style={{display: 'flex', width: '100vw', height: '100vh', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+    <i className="nes-octocat animate is-large"></i>
+    <h1>Loading</h1>
+  </div>
 }
 
 export default App;
