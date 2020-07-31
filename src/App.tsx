@@ -6,6 +6,7 @@ import './App.css';
 import Header from './components/Header'
 import Github from './sections/Github'
 import Bio from './sections/Bio'
+import Certified from './sections/Certified'
 
 Amplify.configure(awsconfig);
 
@@ -20,6 +21,7 @@ const App: React.FC = () => {
       <div className="App">
         <Header />
         <div className="content">
+          <Certified />
           <Bio />
           <Github />
         </div>
