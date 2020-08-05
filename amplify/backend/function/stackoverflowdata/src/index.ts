@@ -40,6 +40,8 @@ exports.handler = async function (event, context) {
        data: obj
     }
   };
+
+  console.log(JSON.stringify(params));
   
   var documentClient = new AWS.DynamoDB.DocumentClient();
   
