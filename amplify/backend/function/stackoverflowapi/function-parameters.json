@@ -1,9 +1,10 @@
 {
-    "permissions": {
-        "storage": {
-            "stackoverflow": [
-                "read"
-            ]
-        }
+  "permissions": {
+    "storage": {
+      "stackoverflow": [
+        "read"
+      ]
     }
+  },
+  "lambdaLayers": []
 }

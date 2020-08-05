@@ -13,7 +13,9 @@
         },
         "categories": {
             "function": {
-                "githubapi": {}
+                "githubapi": {},
+                "stackoverflowdata": {},
+                "stackoverflowapi": {}
             }
         }
     }

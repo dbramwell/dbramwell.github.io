@@ -1,12 +1,13 @@
 {
-    "permissions": {
-        "storage": {
-            "stackoverflow": [
-                "create",
-                "read",
-                "update",
-                "delete"
-            ]
-        }
+  "permissions": {
+    "storage": {
+      "stackoverflow": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
     }
+  },
+  "lambdaLayers": []
 }

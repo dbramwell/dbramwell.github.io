@@ -8,7 +8,17 @@
         "stackoverflowdata": {
             "service": "Lambda",
             "providerPlugin": "awscloudformation",
-            "build": true
+            "build": true,
+            "dependsOn": [
+                {
+                    "category": "storage",
+                    "resourceName": "stackoverflow",
+                    "attributes": [
+                        "Name",
+                        "Arn"
+                    ]
+                }
+            ]
         },
         "stackoverflowapi": {
             "service": "Lambda",
