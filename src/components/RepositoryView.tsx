@@ -16,6 +16,9 @@ const RepositoryView = (props: Props) => {
   if (props.pulls) {
     dialog = <PullsPopup pulls={props.pulls}/>
   }
+  
+  language = props.repo.primaryLanguage ? props.repo.primaryLanguage.name : "Unknown"
+  color = props.repo.primaryLanguage ? props.repo.primaryLanguage.color : "black"
 
   return (
     <div className="repository" >
@@ -33,7 +36,7 @@ const RepositoryView = (props: Props) => {
             <i className="nes-icon star"></i>
             <h3>x{props.repo.stargazers.totalCount}</h3>
           </span>
-          <h3 className="language" style={{color: props.repo.primaryLanguage.color}}>{props.repo.primaryLanguage.name}</h3>
+          <h3 className="language" style={{color: color}}>{language}</h3>
         </div>
       </div>
       <p>{props.repo.description}</p>
