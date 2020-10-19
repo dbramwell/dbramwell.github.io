@@ -17,8 +17,8 @@ const RepositoryView = (props: Props) => {
     dialog = <PullsPopup pulls={props.pulls}/>
   }
   
-  language = props.repo.primaryLanguage ? props.repo.primaryLanguage.name : "Unknown"
-  color = props.repo.primaryLanguage ? props.repo.primaryLanguage.color : "black"
+  const language = props.repo.primaryLanguage ? props.repo.primaryLanguage.name : "Unknown"
+  const color = props.repo.primaryLanguage ? props.repo.primaryLanguage.color : "black"
 
   return (
     <div className="repository" >
