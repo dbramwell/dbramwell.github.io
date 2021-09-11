@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  localstack:
+    image: localstack/localstack:0.12.12
+    ports:
+      - "127.0.0.1:53:53"
+      - "127.0.0.1:53:53/udp"
+      - "127.0.0.1:443:443"
+      - "127.0.0.1:4566:4566"
+      - "127.0.0.1:4571:4571"
+    environment:
+      - SERVICES=dynamodb,sts,cloudformation,ssm,s3,iam
+      - DATA_DIR=/tmp/localstack/data
+      - DEBUG=true
+    volumes:
+      - ./.localstack:/tmp/localstack
+  api:
+    build: api
+    ports:
+      - "8000:8000"
+    command: poetry run uvicorn main:app --reload --host 0.0.0.0
+    volumes:
+      - ./api:/code
+  infra:
+    build: infra
+    depends_on:
+      - localstack
+    environment:
+      - LOCALSTACK_HOSTNAME=localstack
+      - LOCALSTACK_HOST=localstack
+    command: ./deploy.sh
+    volumes:
+      - ./infra:/code
+      - ./.cdk-out:/output
