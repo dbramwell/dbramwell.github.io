@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   localstack:
-    image: localstack/localstack:0.12.12
+    image: localstack/localstack
     ports:
       - "127.0.0.1:53:53"
       - "127.0.0.1:53:53/udp"
@@ -22,6 +22,11 @@ services:
     command: poetry run uvicorn main:app --reload --host 0.0.0.0
     volumes:
       - ./api:/code
+      - ./.cdk-out:/output
+    environment:
+      - LOCALSTACK_HOSTNAME=localstack
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
   infra:
     build: infra
     depends_on:
