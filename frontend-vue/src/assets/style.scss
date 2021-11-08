@@ -1,0 +1,13 @@
+@import '~bulma';
+@font-face {
+  font-family: opensans;
+  src: url(./fonts/OpenSans-Regular.ttf);
+}
+
+button {
+  border-radius: 0;
+}
+
+body, button {
+  font-family: opensans;
+}
