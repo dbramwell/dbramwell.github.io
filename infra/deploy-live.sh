@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 cdk bootstrap
 cdk deploy --require-approval never DevelopmentStack
 aws cloudformation describe-stacks --stack-name DevelopmentStack --query "Stacks[0].Outputs" > /output/outputs.json
