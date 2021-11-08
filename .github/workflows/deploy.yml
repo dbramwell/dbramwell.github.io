@@ -12,6 +12,13 @@ jobs:
         with:
           persist-credentials: false
       
+      - name: Run image
+        uses: abatilo/actions-poetry@v2.0.0
+
+      - name: Install cdk dependencies
+        run: |
+          cd infra && poetry install
+      
       - name: cdk deploy
         uses: youyo/aws-cdk-github-actions@v2
         with:
