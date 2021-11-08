@@ -32,7 +32,7 @@ class DevelopmentStack(Stack):
         if dev:
             github_environment["LOCALSTACK_HOSTNAME"] = os.getenv('LOCALSTACK_HOSTNAME')
 
-        github_token = ssm.from_string_parameter_name(self, 'GITHUB_TOKEN')
+        github_token = ssm.StringParameter.from_string_parameter_name(self, 'GITHUB_TOKEN')
 
         github_schedule_function = PythonFunction(self, 'github-data',
             entry='../scheduled_jobs',
@@ -60,7 +60,7 @@ class DevelopmentStack(Stack):
         )
         data_bucket.grant_read_write(stackoverflow_schedule_function)
 
-        stackoverflow_user = ssm.from_string_parameter_name(self, 'STACKOVERFLOW_USER')
+        stackoverflow_user = ssm.StringParameter.from_string_parameter_name(self, 'STACKOVERFLOW_USER')
         stackoverflow_user.grant_read(stackoverflow_schedule_function)
 
         github_data_url = f"https://{data_bucket.bucket_name}.s3.amazonaws.com/{github_data_file}"
