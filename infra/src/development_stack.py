@@ -2,6 +2,7 @@ from aws_cdk.core import Stack, Construct, CfnOutput, Duration
 from aws_cdk.aws_lambda_python import PythonFunction
 import aws_cdk.aws_lambda as lambda_
 import aws_cdk.aws_s3 as s3
+import aws_cdk.aws_ssm as ssm
 import os
 
 
@@ -31,6 +32,8 @@ class DevelopmentStack(Stack):
         if dev:
             github_environment["LOCALSTACK_HOSTNAME"] = os.getenv('LOCALSTACK_HOSTNAME')
 
+        github_token = ssm.fromStringParameterName(self, 'GITHUB_TOKEN')
+
         github_schedule_function = PythonFunction(self, 'github-data',
             entry='../scheduled_jobs',
             index='github.py',
@@ -38,7 +41,8 @@ class DevelopmentStack(Stack):
             environment=github_environment,
             timeout=Duration.minutes(3),
         )
-        data_bucket.grant_read_write(github_schedule_function)  
+        data_bucket.grant_read_write(github_schedule_function)
+        github_token.grant_read(github_schedule_function)
 
         stackoverflow_env = {
             "STACKOVERFLOW_FILE": stackoverflow_data,
