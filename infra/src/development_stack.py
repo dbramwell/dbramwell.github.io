@@ -60,6 +60,9 @@ class DevelopmentStack(Stack):
         )
         data_bucket.grant_read_write(stackoverflow_schedule_function)
 
+        stackoverflow_user = ssm.fromStringParameterName(self, 'STACKOVERFLOW_USER')
+        stackoverflow_user.grant_read(stackoverflow_schedule_function)
+
         github_data_url = f"https://{data_bucket.bucket_name}.s3.amazonaws.com/{github_data_file}"
         stackoverflow_data_url = f"https://{data_bucket.bucket_name}.s3.amazonaws.com/{stackoverflow_data}"
         if dev:
