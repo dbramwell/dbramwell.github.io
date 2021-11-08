@@ -17,7 +17,7 @@ jobs:
 
       - name: Install cdk dependencies
         run: |
-          cd infra && poetry install
+          cd infra && poetry config virtualenvs.create false && poetry install
       
       - name: cdk deploy
         uses: youyo/aws-cdk-github-actions@v2
