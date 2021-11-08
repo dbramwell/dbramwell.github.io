@@ -10,7 +10,9 @@ class DevelopmentStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        dev = type(self) == DevelopmentStack
+        dev = True
+        if os.getenv('PRODUCTION'):
+            dev = False
 
         data_bucket = s3.Bucket(self, 'Data')
         data_bucket.add_cors_rule(
