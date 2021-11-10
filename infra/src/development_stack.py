@@ -3,6 +3,8 @@ from aws_cdk.aws_lambda_python import PythonFunction
 import aws_cdk.aws_lambda as lambda_
 import aws_cdk.aws_s3 as s3
 import aws_cdk.aws_ssm as ssm
+from aws_cdk.aws_events import Rule, Schedule
+import aws_cdk.aws_events_targets as targets
 import os
 
 
@@ -69,6 +71,12 @@ class DevelopmentStack(Stack):
         if dev:
             github_data_url = f"http://localhost:4566/{data_bucket.bucket_name}/{github_data_file}"
             stackoverflow_data_url = f"http://localhost:4566/{data_bucket.bucket_name}/{stackoverflow_data}"
+
+        rule = Rule(self, 'DailyScheduleRule',
+          schedule=Schedule.cron(minute='0', hour='0')
+        )
+        rule.add_target(targets.LambdaFunction(github_schedule_function))
+        rule.add_target(targets.LambdaFunction(stackoverflow_schedule_function))
 
         CfnOutput(self, 'github_data_url', value=github_data_url)
         CfnOutput(self, 'stackoverflow_data_url', value=stackoverflow_data_url)
