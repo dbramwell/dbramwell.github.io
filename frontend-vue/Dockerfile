@@ -4,3 +4,4 @@ WORKDIR /code
 COPY ./package.json .
 COPY ./package-lock.json .
 RUN npm install
+RUN apt-get install -y libreoffice-writer
