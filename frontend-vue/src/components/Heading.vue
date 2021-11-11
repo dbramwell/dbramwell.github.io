@@ -17,7 +17,7 @@
         </h6>
       </div>
     </div>
-    <div class="ml-6 has-text-right">
+    <div>
       <h2 class="is-size-3 is-size-4-mobile">{{ summary }}</h2>
       <div class="is-size-2">
         <a href="https://stackoverflow.com/users/1147618/dbramwell">
@@ -30,7 +30,7 @@
           <i style="color: #000000;" class="fab fa-github-square"></i>
         </a>
       </div>
-      <div class="is-flex is-justify-content-flex-end">
+      <div class="is-flex is-justify-content-flex-start">
         <a href="https://www.credly.com/badges/bb4735ce-1d2d-4a57-a58c-8993e4b81f9a/public_url">
           <figure class="image is-128x128">
             <img src="../assets/AWS-Developer-Associate-2020.png">
