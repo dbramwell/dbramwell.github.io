@@ -11,14 +11,14 @@ services:
       - "127.0.0.1:4571:4571"
     environment:
       - DATA_DIR=/tmp/localstack/data
-      - DEBUG=true
       - DOCKER_HOST=unix:///var/run/docker.sock
       - LAMBDA_DOCKER_NETWORK=my-site-network
     volumes:
-      - ./.localstack:/tmp/localstack
       - /var/run/docker.sock:/var/run/docker.sock
   frontend-vue:
     build: frontend-vue
+    depends_on:
+      - infra
     volumes:
       - ./frontend-vue:/code
       - /code/node_modules
@@ -34,6 +34,8 @@ services:
     environment:
       - LOCALSTACK_HOSTNAME=localstack
       - LOCALSTACK_HOST=localstack
+    env_file:
+      - .env
     command: ./deploy.sh
     working_dir: $PWD/infra
     volumes:
