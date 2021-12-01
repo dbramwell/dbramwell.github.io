@@ -11,3 +11,23 @@ button {
 body, button {
   font-family: opensans;
 }
+
+@media(max-width: $tablet) {
+  .columns.is-column-mobile {
+    flex-direction: column;
+    align-items: center !important;
+
+    .image {
+      height: 128px;
+      width: 128px;
+    }
+
+    div {
+      text-align: center !important;
+    }
+
+    div.is-flex {
+      align-items: center !important;
+    }
+  }
+}
