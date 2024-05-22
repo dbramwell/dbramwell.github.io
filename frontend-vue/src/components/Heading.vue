@@ -19,7 +19,7 @@
           <a href="https://stackoverflow.com/users/1147618/dbramwell">
             <i style="color: hsl(27,90%,55%);" class="mr-3 fab fa-stack-overflow"></i>
           </a>
-          <a href="https://www.linkedin.com/in/david-bramwell-423b2136/">
+          <a href="https://www.linkedin.com/in/david-bramler-423b2136/">
             <i style="color: #0a66c2;" class="mr-3 fab fa-linkedin"></i>
           </a>
           <a href="https://github.com/dbramwell">
