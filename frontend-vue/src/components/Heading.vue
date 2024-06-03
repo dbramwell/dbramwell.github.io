@@ -13,7 +13,7 @@
           <a href="https://stackoverflow.com/users/1147618/dbramwell">{{stackoverflowRep}}</a>
         </h6>
         <h6 class="mb-4 is-size-4 is-size-5-mobile">
-          <a href="./david_bramwell_cv.pdf">Download CV</a>
+          <a href="./david_bramler_cv.pdf">Download CV</a>
         </h6>
         <div class="is-size-2">
           <a href="https://stackoverflow.com/users/1147618/dbramwell">

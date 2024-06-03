@@ -1,5 +1,5 @@
 #!/bin/bash
 set -e
 npm run build
-lowriter --headless --convert-to pdf david_bramwell_cv.docx
-mv david_bramwell_cv.pdf ./dist
+lowriter --headless --convert-to pdf david_bramler_cv.docx
+mv david_bramler_cv.pdf ./dist

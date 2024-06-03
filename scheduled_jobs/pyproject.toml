@@ -2,7 +2,7 @@
 name = "github"
 version = "0.1.0"
 description = ""
-authors = ["David Bramwell <david.j.bramwell@googlemail.com>"]
+authors = ["David Bramler <david.j.bramwell@googlemail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
