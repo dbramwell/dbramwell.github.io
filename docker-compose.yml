@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   localstack:
     image: localstack/localstack
@@ -17,12 +15,10 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
   frontend-vue:
     build: frontend-vue
-    depends_on:
-      - infra
     volumes:
       - ./frontend-vue:/code
-      - /code/node_modules
       - ./.cdk-out:/output
+      - /code/node_modules
     command: npm run serve
     ports:
       - 8081:8080
