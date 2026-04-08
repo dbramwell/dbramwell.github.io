@@ -1,4 +1,5 @@
-FROM node:16.10
+
+FROM node:22
 RUN npm install -g @vue/cli
 WORKDIR /code
 COPY ./package.json .
